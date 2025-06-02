@@ -1,4 +1,19 @@
-﻿using System;
+//           $$\   $$\  $$$$$$\  $$\   $$\ $$\     $$\ $$$$$$$$\ $$\   $$\         $$\    $$\ $$\   $$\ $$\   $$\  $$$$$$\        
+//           $$$\  $$ |$$  __$$\ $$ |  $$ |\$$\   $$  |$$  _____|$$$\  $$ |        $$ |   $$ |$$ |  $$ |$$$\  $$ |$$  __$$\      $$$$\  $$$$  \
+//           $$$$\ $$ |$$ /  \__|$$ |  $$ | \$$\ $$  / $$ |      $$$$\ $$ |        $$ |   $$ |$$ |  $$ |$$$$\ $$ |$$ /  \__|    $$$$$$$$$$$$$  |
+//           $$ $$\$$ |$$ |$$$$\ $$ |  $$ |  \$$$$  /  $$$$$\    $$ $$\$$ |        $$$$$$$$$ |$$ |  $$ |$$ $$\$$ |$$ |$$$$\     $$$$$$$$$$$$$ /
+//           $$ \$$$$ |$$ |\_$$ |$$ |  $$ |   \$$  /   $$  __|   $$ \$$$$ |        $$  ___$$ |$$ |  $$ |$$ \$$$$ |$$ |\_$$ |      $$$$$$$$$  /
+//           $$ |\$$$ |$$ |  $$ |$$ |  $$ |    $$ |    $$ |      $$ |\$$$ |        $$ |   $$ |$$ |  $$ |$$ |\$$$ |$$ |  $$ |       $$$$$$  /
+//           $$ | \$$ |\$$$$$$  |\$$$$$$  |    $$ |    $$$$$$$$\ $$ | \$$ |        $$ |   $$ |\$$$$$$  |$$ | \$$ |\$$$$$$  |         $$  /
+//           \__|  \__| \______/  \______/     \__|    \________|\__|  \__|        \__|   \__| \______/ \__|  \__| \______/          \_/
+
+
+/*
+có một số điều muốn nói, đây chỉ là file code, tại chưa biết push hết code lên, tại chưa quen với git lắm
+code ở dưới thì khởi tạo 1 project console là chạy được r đó
+trước khi xài thì phải cài selenium nhé @@ tui code gà lắm, đừng gạch đá nha
+*/
+using System;
 using System.IO;
 using System.Collections.Generic;
 using System.Threading;
@@ -12,9 +27,9 @@ class Program
     public static string Password;
     public static string LoginPageUrl = "https://www.facebook.com/login";
     public static string TargetPostUrl;
-    public static string CommentFilePath = @"C:\Users\laptop\OneDrive\Desktop\coder\c#\SpamMessenger\TextFolder\Comments.txt";
-    public static string AccountFilePath = @"C:\Users\laptop\OneDrive\Desktop\coder\c#\SpamMessenger\TextFolder\Accounts.txt";
-    public static string PostLinkFilePath = @"C:\Users\laptop\OneDrive\Desktop\coder\c#\SpamMessenger\TextFolder\PostLink.txt";
+    public static string CommentFilePath = @"Comment"; // tự tạo file txt đi nha
+    public static string AccountFilePath = @"Account.txt"; // tự tạo
+    public static string PostLinkFilePath = @"PostLink.txt"; // tự tạo
     public static void VietnameseInConsole()
     {
         Console.OutputEncoding = System.Text.Encoding.UTF8;
@@ -86,7 +101,7 @@ class Program
         commentBox.SendKeys(randomComment);
         Thread.Sleep(1000);
 
-        commentBox.SendKeys(OpenQA.Selenium.Keys.Enter); // ✅ sửa đúng phím Enter
+        commentBox.SendKeys(OpenQA.Selenium.Keys.Enter);
 
         Console.WriteLine("Comment thành công: " + randomComment);
         Thread.Sleep(3000);
